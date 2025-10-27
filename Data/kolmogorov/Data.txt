@@ -1,0 +1,7 @@
+Insert Data here in the format [N, T, D] 
+with : 
+N : Number of trajectories 
+T : Number of snapshots 
+D : Spatial resolution flattened e.g. 64*64 for 2 velocity fields {u,v} -> 8192
+
+See example of data here and unzip in this folder -> https://dropsu.sorbonne-universite.fr/s/anccqpPeZq6rHmJ
