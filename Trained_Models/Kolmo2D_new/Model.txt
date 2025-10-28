@@ -1,0 +1,1 @@
+Trained model example available at -> https://dropsu.sorbonne-universite.fr/s/TfgjNc4GkH4EER7
