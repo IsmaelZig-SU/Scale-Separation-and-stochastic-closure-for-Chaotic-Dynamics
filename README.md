@@ -112,7 +112,7 @@ python main.py \
     --pred_horizon 40 \
     --beta_VAE 5e-4 \
     --data_dir Data/Kolmogorov/processed_data/npyfiles/kolmo_filtered_100s_8ens.npy
-
+```
 This will train a variational autoencoder-based ROM that learns the underlying reduced dynamics. If you prefer using a pretrained model, download one example from: [`Pretrained ROM Example`](https://dropsu.sorbonne-universite.fr/s/TfgjNc4GkH4EER7)
 
 ### 4. **Visualize and infer filtered dynamics**
