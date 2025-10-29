@@ -1,5 +1,20 @@
-# Scale-Separation-and-stochastic-closure-for-Chaotic-Dynamics
+# Scale Separation and Stochastic Closure for Chaotic Dynamics
 
+This repository leverages **scale separation** to solve **unsteady chaotic systems probabilistically**.  
+An illustrative example is provided using a **Kolmogorov flow**, generated with the [`kolSol` solver](https://github.com/MagriLab/KolSol).
+
+The theoretical framework underlying this work is described in the following paper:  
+[Scale Separation and Stochastic Closure for Chaotic Dynamics (arXiv:2510.24583)](https://arxiv.org/abs/2510.24583)
+
+---
+
+## Overview
+
+Chaotic dynamical systems often exhibit a wide range of interacting spatial and temporal scales.  
+This repository provides tools to:
+- **Filter and preprocess data** from fully resolved simulations  
+- **Train a Dynamical Reduced-Order Model (ROM)** that captures essential dynamics on a lower-dimensional manifold  
+- **Model unresolved scales** through a **Gaussian Process (GP) closure** informed by the resolved-scale dynamics
 
 **Your folder structure should be** : 
 
@@ -9,12 +24,9 @@
 │   └───Kolmogorov
 │       └───processed_data
 │           └───npyfiles
-│                   kolmo.npy
-│                   kolmo_100s.npy
-│                   kolmo_120s.npy
-│                   kolmo_closure.npy
-│                   kolmo_filtered.npy
-│                   kolmo_filtered_100s.npy
+│                   kolmo_100s_8traj.npy
+│                   kolmo_120s_8traj.npy
+│                   kolmo_filtered_120s_8ens.npy
 │                   kolmo_filtered_100s_8ens.npy
 │
 ├───Notebooks
