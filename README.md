@@ -79,4 +79,49 @@ This repository provides tools to:
     
 
     </pre>
+##  Getting Started
 
+### 1. **Download Data**
+
+Download the preprocessed Kolmogorov flow data from the following link:
+
+🔗 [Training and Validation Data](https://dropsu.sorbonne-universite.fr/s/anccqpPeZq6rHmJ)
+
+Place the files in:
+    Data/Kolmogorov/processed_data/npyfiles/
+
+These files include:
+- `kolmo_100s_8ens.npy` — Training/Testing data  
+- `kolmo_120s_8ens.npy` — Validation data
+- 
+- `kolmo_filtered_100s_8ens.npy` — Training/Testing data for the ROM generated with the notebook : 'Low-pass filter' 
+- `kolmo_filtered_120s_8ens.npy` — Validation data (generated with the notebook : 'Low-pass filter')
+
+using full-resolution Kolmogorov flow data produced by [`KolSol`](http](s://github.com/MagriLab/KolSol).
+
+---
+
+### 2. **Train the Dynamical Reduced-Order Model**
+
+Run the following command to train the ROM:
+
+```bash
+python main.py \
+    --num_obs 64 \
+    --seq_len 40 \
+    --pred_horizon 40 \
+    --beta_VAE 5e-4 \
+    --data_dir Data/Kolmogorov/processed_data/npyfiles/kolmo_filtered_100s_8ens.npy
+
+This will train a variational autoencoder-based ROM that learns the underlying reduced dynamics. If you prefer using a pretrained model, download one example from: [`Pretrained ROM Example`](https://dropsu.sorbonne-universite.fr/s/TfgjNc4GkH4EER7)
+
+### 4. **Visualize and infer filtered dynamics**
+
+Use the notebook ROM_dynamics.ipynb to:
+
+    Visualize reconstructed ROM trajectories
+    Generate new inferred trajectories
+
+### 5. **Perform Gaussian Process Closure**
+
+Use the notebook Gaussian_Process_Closure.ipynb
